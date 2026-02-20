@@ -1,40 +1,141 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SalamHub (سلام هب)
 
-## Getting Started
+> Social Media Platform with Islamic Values Foundation
 
-First, run the development server:
+![SalamHub Banner](./public/next.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 About SalamHub
+
+SalamHub is a next-generation social media platform that combines the best features from successful platforms while emphasizing **free speech** and **Islamic moral values**. Open to everyone worldwide, the platform provides a safe, ethical, and engaging environment rooted in the Islamic principle of "Salam" (peace).
+
+### Key Features
+
+- 📝 **Posts & Threads** - Share your thoughts with text, images, and videos
+- 🔄 **Feed System** - Chronological and algorithmic feed options
+- 💬 **Comments & Replies** - Engage in meaningful discussions
+- ❤️ **Reactions** - Express yourself with Islamic-appropriate reactions
+- 👥 **Groups** - Create and join communities around shared interests
+- 🔒 **End-to-End Encrypted DMs** - Private conversations with security
+- 🌍 **Arabic-First** - Built with Arabic as the default language
+- 🛡️ **Content Moderation** - Strict enforcement with community oversight
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- PostgreSQL 15+
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/salamhub.git
+   cd salamhub
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+   Edit `.env` with your configuration.
+
+4. **Set up the database**
+   ```bash
+   # Generate Prisma client
+   npm run db:generate
+   
+   # Push schema to database
+   npm run db:push
+   
+   # Or run migrations
+   npm run db:migrate
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📁 Project Structure
+
+```
+salamhub/
+├── components/          # React components
+│   ├── Layout/         # Layout components (Sidebar, FollowBar)
+│   ├── Button.tsx      # Reusable button component
+│   └── Header.tsx      # Page header component
+├── pages/              # Next.js pages
+│   ├── api/            # API routes
+│   │   └── v1/         # Versioned API endpoints
+│   ├── _app.tsx        # App wrapper
+│   └── index.tsx       # Home page
+├── lib/                # Utility libraries
+│   ├── prisma.ts       # Prisma client singleton
+│   └── auth.ts         # Authentication utilities
+├── prisma/             # Database schema
+│   └── schema.prisma   # Prisma schema definition
+├── styles/             # Global styles
+├── public/             # Static assets
+└── plans/              # Planning documents
+    ├── social-platform-proposal.md
+    ├── database-schema.md
+    └── api-architecture.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔌 API Endpoints
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Authentication
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/v1/auth/register` | Register new user |
+| POST | `/api/v1/auth/login` | Login user |
+| POST | `/api/v1/auth/logout` | Logout user |
+| POST | `/api/v1/auth/refresh` | Refresh access token |
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Users
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/v1/users/me` | Get current user |
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Posts
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/v1/posts` | Create new post |
+| GET | `/api/v1/feed` | Get feed |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🛠️ Tech Stack
 
-## Learn More
+| Category | Technology |
+|----------|------------|
+| **Framework** | Next.js 14 |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS |
+| **Database** | PostgreSQL |
+| **ORM** | Prisma |
+| **Authentication** | JWT |
+| **State Management** | Zustand |
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Please read our contributing guidelines before submitting a pull request.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📞 Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For questions or support, please open an issue on GitHub.
+
+---
+
+**SalamHub** - Building a better social media experience, together. 🕊️
